@@ -17,6 +17,14 @@
                 Projects
             </a>
         </li>
+        <li>
+            <a href="{{route('profile.edit')}}" class="nav-link text-white">
+                <svg class="bi pe-none me-2" width="16" height="16">
+                    <use xlink:href="#people-circle"></use>
+                </svg>
+                Profile
+            </a>
+        </li>
     </ul>
 
 </div>
