@@ -1,6 +1,7 @@
 @extends('layouts.admin')
 
 @section('content')
+<a href="{{route('admin.projects.create')}}" class="btn btn-primary"> Crea nuovo post</a>
 
 <table class="table">
     <thead>
@@ -23,6 +24,16 @@
                 <td>{{$project->slug}}</td>
                 <td>{{$project->url}}</td>
                 <td>{{$project->description}}</td>
+                <td><a href="{{route('admin.projects.show', $project->slug)}}" class="btn btn-secondary">Show</a></td>
+                <td><a href="{{route('admin.projects.edit', $project->slug)}}" class="btn btn-secondary">Edit</a></td>
+                <td>
+                    <form action="{{route('admin.projects.destroy', $project->slug)}}"  method="POST">
+                        @csrf
+                        @method('DELETE')
+                        <button type="submit" class="btn btn-danger">DELETE</button>
+                    </form>
+                </td>
+
             </tr>
         @endforeach
 
